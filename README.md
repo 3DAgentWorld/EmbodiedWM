@@ -6,7 +6,7 @@ The page is dependency-free and can be served directly by GitHub Pages from the 
 
 The paper library is derived from citations in the active survey body. Its primary groups follow the
 Plausible, Controllable, and Actionable subsections; the Four Improvement Loops and Embodiments sections
-provide cross-cutting tags. `WM_Corpus_200.csv` is not used by the website.
+provide cross-cutting tags. 
 
 ## Preview locally
 
