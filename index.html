@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Project page for World Models for Embodied Intelligence: From Plausible to Controllable to Actionable."
+    />
+    <meta name="theme-color" content="#081724" />
+    <title>World Models for Embodied Intelligence</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="papers.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="World Models for Embodied Intelligence, home">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span>EmbodiedWM</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span><span class="sr-only">Open navigation</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#framework">Framework</a>
+        <a href="#matrix">Matrix</a>
+        <a href="#landscape">Landscape</a>
+        <a href="#library">Paper Library</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-grid"></div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> A decision-centered survey of embodied world models</p>
+          <h1>World Models for<br /><em>Embodied Intelligence</em></h1>
+          <p class="hero-deck">From <strong>Plausible</strong> to <strong>Controllable</strong> to <strong>Actionable</strong></p>
+          <p class="hero-summary">
+            A world model matters not only because it can imagine a convincing future, but because it
+            preserves the right state, responds correctly to intervention, and improves an embodied
+            agent’s decisions.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#framework">Explore the framework <span aria-hidden="true">↓</span></a>
+            <a class="button button-ghost" href="#citation">Cite this survey</a>
+          </div>
+          <div class="author-block" aria-label="Authors">
+            <p>
+              Nanjie Yao · Hao Wang · Chong Cheng · Zhikang Chen · Wenzhe Li · Jiafei Lyu · Li Shen ·
+              Peilin Zhao · Zongqing Lu · Gao Huang · Steven Hoi · Dacheng Tao · Deheng Ye
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="The three capability levels">
+          <div class="signal signal-a"></div>
+          <div class="signal signal-b"></div>
+          <div class="ladder-label">Capability ladder</div>
+          <article class="hero-level level-plausible">
+            <span class="level-index">01</span>
+            <div>
+              <h2>Plausible</h2>
+              <p>Preserve task-relevant state over time.</p>
+            </div>
+            <span class="level-proof">state consistency</span>
+          </article>
+          <div class="level-connector"><span></span></div>
+          <article class="hero-level level-controllable">
+            <span class="level-index">02</span>
+            <div>
+              <h2>Controllable</h2>
+              <p>Predict how interventions change that state.</p>
+            </div>
+            <span class="level-proof">intervention fidelity</span>
+          </article>
+          <div class="level-connector"><span></span></div>
+          <article class="hero-level level-actionable">
+            <span class="level-index">03</span>
+            <div>
+              <h2>Actionable</h2>
+              <p>Turn prediction into measurable downstream gains.</p>
+            </div>
+            <span class="level-proof">decision utility</span>
+          </article>
+        </div>
+
+        <div class="hero-foot">
+          <span>Manipulation</span><span>Navigation</span><span>Locomotion</span><span>Autonomous driving</span>
+        </div>
+      </section>
+
+      <section class="section intro-section" aria-labelledby="central-question">
+        <div class="section-kicker">01 / Motivation</div>
+        <div class="statement reveal">
+          <p class="statement-lead" id="central-question">The central question is no longer</p>
+          <p class="statement-old">“Can the model generate a realistic future?”</p>
+          <p class="statement-turn">but</p>
+          <p class="statement-new">“What does that prediction enable an agent to do?”</p>
+        </div>
+        <div class="principles reveal">
+          <div><span>Represent</span><p>What state must remain identifiable and measurable?</p></div>
+          <div><span>Intervene</span><p>Does changing an action produce the corresponding effect?</p></div>
+          <div><span>Decide</span><p>Does prediction improve planning, learning, verification, or recovery?</p></div>
+        </div>
+      </section>
+
+      <section class="section framework-section" id="framework" aria-labelledby="framework-title">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-kicker">02 / Capability framework</p>
+            <h2 id="framework-title">Three levels.<br />Three evidence requirements.</h2>
+          </div>
+          <p>
+            The levels describe progressively stronger claims, not mutually exclusive architectures.
+            A method may demonstrate a higher-level use while leaving a lower-level property untested.
+          </p>
+        </div>
+
+        <div class="capability-list">
+          <article class="capability reveal" data-accent="violet">
+            <div class="capability-number">01</div>
+            <div class="capability-body">
+              <div class="capability-topline"><span>P</span><p>State consistency</p></div>
+              <h3>Plausible</h3>
+              <p class="capability-definition">
+                A plausible model preserves task-relevant temporal, geometric, or physical structure
+                across a rollout—beyond surface-level visual realism.
+              </p>
+              <div class="capability-metrics">
+                <span>Identity</span><span>Geometry</span><span>Physics</span><span>Memory</span><span>Drift</span>
+              </div>
+            </div>
+            <p class="capability-test"><strong>Evidence:</strong> held-out state errors, consistency under occlusion, and performance as a function of horizon.</p>
+          </article>
+
+          <article class="capability reveal" data-accent="blue">
+            <div class="capability-number">02</div>
+            <div class="capability-body">
+              <div class="capability-topline"><span>C</span><p>Intervention fidelity</p></div>
+              <h3>Controllable</h3>
+              <p class="capability-definition">
+                A controllable model predicts how a commanded intervention changes the future while
+                preserving unrelated aspects of the scene.
+              </p>
+              <div class="capability-metrics">
+                <span>Action identity</span><span>Timing</span><span>Magnitude</span><span>Composition</span>
+              </div>
+            </div>
+            <p class="capability-test"><strong>Evidence:</strong> paired or branched interventions from shared initial states, including masked and shuffled-action controls.</p>
+          </article>
+
+          <article class="capability reveal" data-accent="coral">
+            <div class="capability-number">03</div>
+            <div class="capability-body">
+              <div class="capability-topline"><span>A</span><p>Decision utility</p></div>
+              <h3>Actionable</h3>
+              <p class="capability-definition">
+                An actionable model changes a downstream decision or update and produces a measured
+                gain under matched data, controller, compute, and latency budgets.
+              </p>
+              <div class="capability-metrics">
+                <span>Planning</span><span>Learning</span><span>Evaluation</span><span>Recovery</span>
+              </div>
+            </div>
+            <p class="capability-test"><strong>Evidence:</strong> realized task utility against a matched baseline that removes world-model input.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section matrix-section" id="matrix" aria-labelledby="matrix-title">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-kicker">03 / Grounding × improvement</p>
+            <h2 id="matrix-title">Where prediction<br />enters the loop.</h2>
+          </div>
+          <p>
+            The matrix connects what grounds a prediction—geometry, physics, or action—to the system
+            component it informs. Select any cell to inspect the interface.
+          </p>
+        </div>
+
+        <div class="matrix-wrap reveal">
+          <div class="matrix" role="grid" aria-label="Grounding and improvement matrix">
+            <div class="matrix-corner" role="columnheader"><span>Grounding</span><b>Improvement loop</b></div>
+            <div class="matrix-head" role="columnheader"><span>01</span>Data</div>
+            <div class="matrix-head" role="columnheader"><span>02</span>Reward</div>
+            <div class="matrix-head" role="columnheader"><span>03</span>Policy</div>
+            <div class="matrix-head" role="columnheader"><span>04</span>Model-self</div>
+
+            <div class="matrix-row-head geo" role="rowheader"><span>G</span>Geometry</div>
+            <button class="matrix-cell" data-title="Geometry × Data" data-detail="Acquire viewpoints, occlusions, and topology changes that reduce spatial ambiguity.">Viewpoints &amp; topology</button>
+            <button class="matrix-cell" data-title="Geometry × Reward" data-detail="Score collision, visibility, reachability, and spatial progress.">Reachability</button>
+            <button class="matrix-cell" data-title="Geometry × Policy" data-detail="Select or learn actions that preserve feasible paths and object relations.">Feasible paths</button>
+            <button class="matrix-cell" data-title="Geometry × Model-self" data-detail="Correct maps, identities, and persistent scene state after observed mismatch.">Persistent state</button>
+
+            <div class="matrix-row-head phys" role="rowheader"><span>P</span>Physics</div>
+            <button class="matrix-cell" data-title="Physics × Data" data-detail="Acquire contact, slip, deformation, force, and rare-failure transitions.">Contact &amp; slip</button>
+            <button class="matrix-cell" data-title="Physics × Reward" data-detail="Score stability, physical feasibility, energy, and force limits.">Feasibility</button>
+            <button class="matrix-cell" data-title="Physics × Policy" data-detail="Choose actions that avoid unsafe or physically unsupported outcomes.">Safe outcomes</button>
+            <button class="matrix-cell" data-title="Physics × Model-self" data-detail="Correct local dynamics and contact behavior while testing for regression.">Dynamics repair</button>
+
+            <div class="matrix-row-head act" role="rowheader"><span>A</span>Action</div>
+            <button class="matrix-cell" data-title="Action × Data" data-detail="Acquire paired interventions that vary command, timing, magnitude, composition, or embodiment.">Paired interventions</button>
+            <button class="matrix-cell" data-title="Action × Reward" data-detail="Score command adherence, task progress, value, and risk.">Value &amp; risk</button>
+            <button class="matrix-cell" data-title="Action × Policy" data-detail="Select or learn actions from supported counterfactual outcomes.">Counterfactuals</button>
+            <button class="matrix-cell" data-title="Action × Model-self" data-detail="Correct action semantics, delay, and action-conditioned transition bias.">Transition bias</button>
+          </div>
+          <aside class="matrix-inspector" aria-live="polite">
+            <p>Selected interface</p>
+            <h3 data-inspector-title>Geometry × Data</h3>
+            <div class="inspector-line"></div>
+            <p data-inspector-detail>Acquire viewpoints, occlusions, and topology changes that reduce spatial ambiguity.</p>
+            <small>A matrix cell is an interface, not proof of actionability.</small>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section landscape-section" id="landscape" aria-labelledby="landscape-title">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-kicker">04 / Technical landscape</p>
+            <h2 id="landscape-title">A field in motion.</h2>
+          </div>
+          <p>
+            The survey traces technical progressions within each level, from compact predictive state
+            to intervention-aware modeling and closed-loop use.
+          </p>
+        </div>
+
+        <div class="progression-grid">
+          <article class="progression-card reveal">
+            <div class="progression-icon p-icon">P</div>
+            <p class="progression-label">Plausible progression</p>
+            <ol>
+              <li><span>01</span>Latent &amp; object-centric state</li>
+              <li><span>02</span>Metric 3D/4D scene state</li>
+              <li><span>03</span>Physics-grounded dynamics</li>
+              <li><span>04</span>Persistent memory</li>
+            </ol>
+          </article>
+          <article class="progression-card reveal">
+            <div class="progression-icon c-icon">C</div>
+            <p class="progression-label">Controllable progression</p>
+            <ol>
+              <li><span>01</span>Action-conditioned prediction</li>
+              <li><span>02</span>Latent &amp; language actions</li>
+              <li><span>03</span>Measurable intervention variables</li>
+              <li><span>04</span>Joint world–action models</li>
+            </ol>
+          </article>
+          <article class="progression-card reveal">
+            <div class="progression-icon a-icon">A</div>
+            <p class="progression-label">Actionable progression</p>
+            <ol>
+              <li><span>01</span>Planning, search &amp; selection</li>
+              <li><span>02</span>Policy learning from imagination</li>
+              <li><span>03</span>Learned simulators</li>
+              <li><span>04</span>Verification &amp; recovery</li>
+            </ol>
+          </article>
+        </div>
+
+        <div class="domains reveal" aria-labelledby="domains-title">
+          <div class="domains-copy">
+            <p class="section-kicker">Across embodiments</p>
+            <h3 id="domains-title">The ladder stays fixed.<br />The decisive variable changes.</h3>
+          </div>
+          <div class="domain-list">
+            <div><span>Manipulation</span><p>Contact, object state, force</p></div>
+            <div><span>Autonomous driving</span><p>Multi-agent futures, safety</p></div>
+            <div><span>Navigation</span><p>Partial observability, geometry</p></div>
+            <div><span>Locomotion</span><p>Fast dynamics, stability</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section library-section" id="library" aria-labelledby="library-title">
+        <div class="library-heading reveal">
+          <div>
+            <p class="section-kicker">05 / Paper library</p>
+            <h2 id="library-title">Explore the<br />research landscape.</h2>
+          </div>
+          <div class="library-summary">
+            <strong><span data-total-papers>162</span> papers</strong>
+            <p>Indexed directly from citations and classifications in the survey body.</p>
+          </div>
+        </div>
+
+        <div class="library-shell reveal">
+          <form class="library-controls" data-library-form role="search">
+            <div class="search-field">
+              <label for="paper-search">Search papers</label>
+              <div class="search-input-wrap">
+                <span aria-hidden="true">⌕</span>
+                <input id="paper-search" type="search" placeholder="Title, author, direction, keyword…" autocomplete="off" data-paper-search />
+                <kbd>/</kbd>
+              </div>
+            </div>
+
+            <div class="filter-grid">
+              <label>
+                <span>Capability</span>
+                <select data-filter="capability"><option value="">All capabilities</option></select>
+              </label>
+              <label>
+                <span>Technical progression</span>
+                <select data-filter="progression"><option value="">All progressions</option></select>
+              </label>
+              <label>
+                <span>Improvement loop</span>
+                <select data-filter="loop"><option value="">All loops</option></select>
+              </label>
+              <label>
+                <span>Domain</span>
+                <select data-filter="domain"><option value="">All domains</option></select>
+              </label>
+              <label>
+                <span>Sort</span>
+                <select data-sort>
+                  <option value="newest">Newest first</option>
+                  <option value="oldest">Oldest first</option>
+                  <option value="title">Title A–Z</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="active-filter-row">
+              <div class="level-shortcuts" aria-label="Quick capability filters">
+                <button type="button" class="level-shortcut active" data-level="">All</button>
+                <button type="button" class="level-shortcut plausible" data-level="Plausible">Plausible</button>
+                <button type="button" class="level-shortcut controllable" data-level="Controllable">Controllable</button>
+                <button type="button" class="level-shortcut actionable" data-level="Actionable">Actionable</button>
+                <button type="button" class="level-shortcut cross" data-level="Cross-cutting">Cross-cutting</button>
+              </div>
+              <button type="reset" class="clear-filters" data-clear-filters>Clear filters</button>
+            </div>
+          </form>
+
+          <div class="library-status" aria-live="polite">
+            <p>Showing <strong data-visible-count>0</strong> of <strong data-result-count>200</strong> matching papers</p>
+            <span data-filter-description>All body classifications</span>
+          </div>
+
+          <div class="paper-grid" data-paper-grid></div>
+
+          <div class="library-empty" data-library-empty hidden>
+            <span aria-hidden="true">∅</span>
+            <h3>No papers match these filters.</h3>
+            <p>Try a broader keyword or clear one of the classification filters.</p>
+            <button type="button" data-empty-reset>Reset library</button>
+          </div>
+
+          <div class="library-more">
+            <button type="button" class="button button-library" data-load-more>Load more papers <span aria-hidden="true">↓</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section challenges-section" id="challenges" aria-labelledby="challenges-title">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-kicker">06 / Open problems</p>
+            <h2 id="challenges-title">What still blocks<br />the next capability.</h2>
+          </div>
+          <p>
+            The most consequential gaps appear at the boundaries between levels—especially when models
+            face longer horizons, new policies, new embodiments, and real-time constraints.
+          </p>
+        </div>
+
+        <div class="challenge-grid">
+          <article class="challenge reveal"><span>01</span><h3>Persistent state &amp; drift</h3><p>Retain identity, geometry, and unresolved uncertainty across occlusion and long rollouts.</p></article>
+          <article class="challenge reveal"><span>02</span><h3>Causal action effects</h3><p>Separate intervention response from correlations inherited from demonstrations.</p></article>
+          <article class="challenge reveal"><span>03</span><h3>Decision utility under budget</h3><p>Preserve value, feasibility, and safety within real compute and control deadlines.</p></article>
+          <article class="challenge reveal"><span>04</span><h3>Joint grounding</h3><p>Make geometry, physics, and action modules agree when their predictions conflict.</p></article>
+          <article class="challenge reveal"><span>05</span><h3>Uncertainty &amp; stable loops</h3><p>Revalidate confidence after policy updates and prevent shared errors from circulating.</p></article>
+          <article class="challenge reveal"><span>06</span><h3>Access &amp; reproducibility</h3><p>Report action interfaces, budgets, latency, evaluation seeds, and failure cases.</p></article>
+        </div>
+      </section>
+
+      <section class="section takeaway-section">
+        <div class="takeaway reveal">
+          <p class="section-kicker">The evaluation shift</p>
+          <h2>
+            The right state.<br />
+            The right response.<br />
+            <span>A better decision.</span>
+          </h2>
+          <p>
+            Progress toward actionability should be measured by whether grounded predictions improve
+            closed-loop behavior under explicit data, compute, and latency budgets.
+          </p>
+        </div>
+      </section>
+
+      <section class="section citation-section" id="citation" aria-labelledby="citation-title">
+        <div class="citation-copy reveal">
+          <p class="section-kicker">07 / Citation</p>
+          <h2 id="citation-title">Build on the framework.</h2>
+          <p>If this survey supports your research, please cite it using the entry below.</p>
+        </div>
+        <div class="citation-box reveal">
+          <pre><code id="bibtex">@article{yao2026worldmodels,
+  title   = {World Models for Embodied Intelligence:
+             From Plausible to Controllable to Actionable},
+  author  = {Yao, Nanjie and Wang, Hao and Cheng, Chong and
+             Chen, Zhikang and Li, Wenzhe and others},
+  year    = {2026}
+}</code></pre>
+          <button class="copy-button" type="button" data-copy aria-label="Copy BibTeX citation">
+            <span data-copy-label>Copy BibTeX</span><span aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>EmbodiedWM</span></a>
+      <p>World Models for Embodied Intelligence · 2026</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
